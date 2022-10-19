@@ -1,2 +1,2 @@
 # gotashell
-Encrypted Golang reverse shell
+Simple Golang reverse shell
