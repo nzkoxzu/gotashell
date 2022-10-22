@@ -1,2 +1,2 @@
 # gotashell
-Encrypted Golang reverse shell for Windows targets
+Golang reverse shell with network level encryption (AES) for Windows targets
